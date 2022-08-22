@@ -1,5 +1,6 @@
 package com.example.mvvm.ui.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,12 +20,15 @@ class UserAdapter(val data : List<Users>) : RecyclerView.Adapter<UserAdapter.Use
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        Log.e("TAG2" , data.size.toString())
         holder.bind(data[position])
     }
 
     override fun getItemCount(): Int {
+        Log.e("TAG1" , data.size.toString())
         return data.size
     }
+
 
     class UserViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bind(users: Users) {
